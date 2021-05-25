@@ -64,7 +64,7 @@ jar tf  libs/example-main.1.0.jar
 # unzip -p  compiled/example.libs/example-lib-1.0.jar META-INF/MANIFEST.MF
 ```
 
-## 3 Creating runnable jar non-module-jar with main class
+## 3 Creating modular jar with main class
 
 ```shell
 
