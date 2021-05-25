@@ -1,7 +1,26 @@
 ## Enjoyng JAVA MODULES jdk11+
+This project brings simple source to test modular compiling jdk9+
+
+- [About Sources](#about-sources)
+- [1 Some Helpful commands and parameters](#1-some-helpful-commands-and-parameters)
+- [2 Creating runnable jar non-module-jar with main class](#2-creating-runnable-jar-non-module-jar-with-main-class)
+- [3 Creating runnable jar non-module-jar with main class](#3-creating-runnable-jar-non-module-jar-with-main-class)
+- [4 Creating modular lib with no main class](#4-creating-modular-lib-with-no-main-class)
+- [5 Creating modular app with main class using lib module](#5-creating-modular-app-with-main-class-using-lib-module)
+- [6 Creating customized jre for our libs](#6-creating-customized-jre-for-our-libs)
+- [7 Creating customized jre for our app](#7-creating-customized-jre-for-our-app)
+- [8 Testing new jre with docker](#8-testing-new-jre-with-docker)
 
 
-## Some Helpfull commands and parameters
+## About Sources
+There are 4 source in 'src' folder used to test compiling and running on modular java
+- [src/example.app](https://github.com/dilermando-lima/java-modules/tree/main/src/example.app) contains a main class using example.lib as dependency
+- [src/example.lib](https://github.com/dilermando-lima/java-modules/tree/main/src/example.lib) contanis only a simple method to be used in example.app
+- [src/example.main](https://github.com/dilermando-lima/java-modules/tree/main/src/example.main) contains only a main class print in console
+- [src/example.readfile](https://github.com/dilermando-lima/java-modules/tree/main/src/example.readfile) contains a main class with resource folder to be used into container
+
+
+## 1 Some Helpful commands and parameters
 | type    | command |  short  | param                | description
 | ---     |   ---   |  ---    |  ---                 |  ----
 | compile | javac   |         | --module-source-path | folder from my current source with my 'module-info.java'    
@@ -19,7 +38,8 @@
 | describe| java    |         | --describe-module    | describe dependencies in specific module
 | describe| jar     |   -t    | --list               | list all files inside a jar
 
-## Creating runnable jar non-module-jar with main class
+
+## 2 Creating runnable jar non-module-jar with main class
 
 ```shell
 # clean folder contains compiled source
@@ -44,7 +64,7 @@ jar tf  libs/example-main.1.0.jar
 # unzip -p  compiled/example.libs/example-lib-1.0.jar META-INF/MANIFEST.MF
 ```
 
-## Creating runnable jar non-module-jar with main class
+## 3 Creating runnable jar non-module-jar with main class
 
 ```shell
 
@@ -70,7 +90,7 @@ jar --file=libs/example-main.2.0.jar --describe-module
 
 
 
-## Creating modular lib with no main class
+## 4 Creating modular lib with no main class
 
 ```shell
 
@@ -91,7 +111,7 @@ jar tf  libs/example-lib.1.0.jar
 jar --file=libs/example-lib.1.0.jar --describe-module
 ```
 
-## Creating modular app with main class using lib module
+## 5 Creating modular app with main class using lib module
 ```shell
 
 # clean folder contains compiled source
@@ -110,12 +130,12 @@ java -p compiled -m example.app/example.app.run.App
 # describe dependencies in modules
 jdeps --module-path compiled --module example.app
 
-# describe sumarized dependencies in modules
+# describe summarized dependencies in modules
 jdeps --module-path compiled --module example.app -s
 
 ```
 
-## creating jre customized for our libs
+## 6 Creating customized jre for our libs
 ```shell
 
 # delete folder contains jre customized and clean all folder
@@ -147,7 +167,7 @@ jre-custom/bin/java --module example.app/example.app.run.App
 
 ```
 
-## creating jre customized for our app
+## 7 Creating customized jre for our app
 ```shell
 
 # delete folder contains jre customized and clean all folder
@@ -170,7 +190,7 @@ jre-custom/bin/OUR-APP-IN-OUR-JRE
 
 ```
 
-## testing new jre with docker
+## 8 Testing new jre with docker
 ```shell
 
 # if you need clean images before or use compose-down
