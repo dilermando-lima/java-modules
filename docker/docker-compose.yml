@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+    app_java:
+        container_name: app_java_local
+        image: app_java_local:local
+        build:
+          context: ../
+          dockerfile: ./docker/Dockerfile
+        volumes: 
+          - ./../src:/src-docker

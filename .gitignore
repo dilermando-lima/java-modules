@@ -1,0 +1,8 @@
+
+
+compiled/*
+libs/*
+libs-external/*
+jre-custom/*
+
+!.gitkeep

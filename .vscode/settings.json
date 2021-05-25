@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": [
+        "src/example.app",
+        "src/example.lib",
+        "src/example.readfile",
+        "src/example.main"
+    ],
+    "java.project.referencedLibraries": [
+        // "built/example.lib/example-lib-1.0.jar"
+    ],
+    "java.project.resourceFilters": [
+        "module-info.java"
+    ]
+}
