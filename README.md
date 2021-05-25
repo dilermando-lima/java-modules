@@ -4,7 +4,7 @@ This project brings simple source to test modular compiling jdk9+
 - [About Sources](#about-sources)
 - [1 Some Helpful commands and parameters](#1-some-helpful-commands-and-parameters)
 - [2 Creating runnable jar non-module-jar with main class](#2-creating-runnable-jar-non-module-jar-with-main-class)
-- [3 Creating runnable jar non-module-jar with main class](#3-creating-runnable-jar-non-module-jar-with-main-class)
+- [3 Creating modular jar non-module-jar with main class](#3-creating-modular-jar-with-main-class)
 - [4 Creating modular lib with no main class](#4-creating-modular-lib-with-no-main-class)
 - [5 Creating modular app with main class using lib module](#5-creating-modular-app-with-main-class-using-lib-module)
 - [6 Creating customized jre for our libs](#6-creating-customized-jre-for-our-libs)
